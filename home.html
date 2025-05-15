@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de OS</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo-area">
+      <img src="imagens/images.jpeg" alt="Logo do Sistema" class="profile-img" />
+      <span class="system-name">Sistema de OS Luiz Panis</span>
+    </div>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="index.html">Sair</a></li>
+        <li><a href="cadastroOs.html">Cadastrar OS</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Lista de Chamados</h2>
+    <div class="filtros">
+      <input type="text" id="filtroOS" placeholder="Buscar por Nº da OS">
+      <select id="filtroResponsavel">
+        <option value="">Todos os Responsáveis</option>
+        <option value="Luiz Eduardo Panis">Luiz Eduardo Panis</option>
+        <option value="Junior Augusto Lang">Junior Augusto Lang</option>
+        <option value="Lucas Giovanella">Lucas Giovanella</option>
+      </select>
+      <select id="filtroStatus">
+        <option value="">Todos os Status</option>
+        <option value="Em atendimento">Em atendimento</option>
+        <option value="Finalizado">Finalizado</option>
+      </select>
+      <button id="btnBuscar">Buscar</button>
+    </div>
+
+    <table class="tabela-itens">
+      <thead>
+        <tr>
+          <th>Nº OS</th>
+          <th>Título</th>
+          <th>Responsável</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaChamados"></tbody>
+    </table>
+  </div>
+
+  <script src="home.js"></script>
+  <script src="cadastro.js"></script>
+</body>
+</html>

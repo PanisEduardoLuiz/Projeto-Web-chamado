@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastrar Usuário - Sistema de OS</title>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo-area">
+      <img src="imagens/images.jpeg" alt="Logo do Sistema" class="profile-img" />
+      <span class="system-name">Sistema de OS Luiz Panis</span>
+    </div>
+  </header>
+
+  <div class="login-container">
+    <h2>Criar Conta</h2>
+    <form id="formCadastroUsuario">
+      <input type="text" id="nome" placeholder="Nome completo" required />
+      <input type="email" id="email" placeholder="E-mail" required />
+      <input type="password" id="senha" placeholder="Senha" required minlength="6" />
+      <button type="submit">Cadastrar</button>
+    </form>
+    <p>Já tem uma conta? <a href="index.html">Faça login aqui</a></p>
+    <div id="erro" class="erro"></div>
+  </div>
+
+  <script>
+    document.getElementById('formCadastroUsuario').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const senha = document.getElementById('senha').value.trim();
+      const erro = document.getElementById('erro');
+
+      if (!nome || !email || !senha) {
+        erro.textContent = 'Por favor, preencha todos os campos.';
+        return;
+      }
+
+      if (senha.length < 6) {
+        erro.textContent = 'A senha deve ter pelo menos 6 caracteres.';
+        return;
+      }
+
+      // Pode adicionar validação de formato de email aqui se quiser
+
+      const usuario = { nome, email, senha };
+      localStorage.setItem('usuario', JSON.stringify(usuario));
+      alert('Conta criada com sucesso!');
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
