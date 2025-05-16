@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Visualização do Chamado</title>
+  <link rel="stylesheet" href="estilo.css"/>
+</head>
+<body>
+
+
+ <header class="header">
+    <div class="logo-area">
+      <img src="imagens/images.jpeg" alt="Logo do Sistema" class="profile-img" />
+      <span class="system-name">Sistema de OS Luiz Panis</span>
+    </div>
+  </header>
+
+
+
+<div class="form-visualizar">
+  <div class="chamado-container">
+    <h2>Visualização do Chamado</h2>
+
+    <!-- Campos comuns -->
+    <p><strong>Número da OS:</strong> <span id="osNumero"></span></p>
+    <p><strong>Nome:</strong> <span id="nome"></span></p>
+    <p><strong>Título:</strong> <span id="titulo"></span></p>
+    <p><strong>Descrição:</strong> <span id="descricao"></span></p>
+    <p><strong>Data e Hora:</strong> <span id="dataHora"></span></p>
+    <p><strong>Telefone:</strong> <span id="telefone"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Tipo de Demanda:</strong> <span id="tipoDemanda"></span></p>
+    <p><strong>Mídia:</strong> <a id="linkMidia" href="#" target="_blank">Ver mídia</a></p>
+
+    <!-- Campos apenas para funcionários -->
+    <div class="somente-funcionario" style="display: none;">
+      <p><strong>Atendido por:</strong> <span id="atendidoPor"></span></p>
+      <p><strong>Prioridade:</strong> <span id="prioridade"></span></p>
+      <p><strong>Situação:</strong> <span id="situacao"></span></p>
+      <p><strong>Andamento:</strong> <span id="andamento"></span></p>
+      <p><strong>Nota:</strong> <span id="nota"></span></p>
+    </div>
+
+    <!-- Histórico -->
+    <div class="historico">
+      <h3>Histórico</h3>
+      <ul id="listaHistorico"></ul>
+    </div>
+
+    <div class="acoes">
+      <button onclick="voltar()">Voltar</button>
+      <button class="somente-funcionario" style="display: none;" onclick="editarChamado()">Editar</button>
+      <button class="somente-funcionario" style="display: none;" onclick="encerrarChamado()">Encerrar</button>
+    </div>
+  </div>
+  </div>
+
+  <script src="visualizar.js"></script>
+</body>
+</html>
